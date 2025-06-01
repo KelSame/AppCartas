@@ -1,0 +1,11 @@
+const express = require('express');
+const router = express.Router();
+const validarAdmin = require('../validacion/validarAdmin');
+const controladorAdmin = require('../controladores/controladorAdmin');
+
+router.post('/crear-sobres', validarAdmin, controladorAdmin.crearSobres);
+router.post('/otorgar-monedas', validarAdmin, controladorAdmin.otorgarMonedas);
+router.post('/crear-carta', validarAdmin, controladorAdmin.crearCarta);
+router.post('/eliminar-carta', validarAdmin, controladorAdmin.eliminarCarta);
+
+module.exports = router;
